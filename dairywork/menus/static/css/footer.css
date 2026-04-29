@@ -1,0 +1,108 @@
+/* Footer container */
+footer {
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+    background-color: blue;
+}
+
+/* Top bar */
+.foot-panel1 {
+    margin-top: 15px;
+    background-color: blue;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+/* Logo section */
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    
+}
+
+.footer-logo img {
+    height: 50px;
+    width: auto;
+    object-fit: cover;
+    background-color: blue;
+    align-self: center;
+}
+.logo a img {
+    transition: transform 0.3s;
+}
+
+.logo a:hover img {
+    transform: scale(1.05);
+    color:green; /* slightly enlarge on hover */
+}
+
+
+/* Navigation links section */
+.foot-panel2 {
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.foot-panel2 ul {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.foot-panel2 ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.foot-panel2 ul li a:hover {
+    color: yellow;
+}
+
+/* Social links section */
+.footer-links {
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: red;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 0.85rem;
+    text-align: center;
+    color: white;
+}
+
+.footer-bottom p {
+    margin: 3px 0;
+}
+.footer-bottom p :hover{
+    color:yellow;
+}

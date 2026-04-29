@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dairy</title>
+
+    <!-- Tailwind CSS (CDN for development) -->
+    
+</head>
+
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- NAVIGATION -->
+    <header class="shadow-md">
+        {% include "menus/includes/nav.html" %}
+    </header>
+
+    <!-- MAIN PAGE CONTENT -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    {% include "menus/includes/footer.html" %}
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+{%extends 'menus/base.html'%}
+{% load static %}
+{% block title %}DAiry{% endblock %}
+{% block content %}
+<style>
+ h2{
+    color:white;
+    background-color: blue;
+ }
+</style>
+<h2> order now all details below </h2>
+<h3>OrderId:{{order.id}}</h3>
+<ul>
+    {% for item in order.items.all%}
+    <li>
+        <strong>{{item.quantity}} {{item.prdouct.name}}</strong>
+        <br>
+        <span>{{item.price}}</span>
+    </li>
+    {% endfor%}
+</ul>
+<br>
+
+{% endblock%}

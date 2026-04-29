@@ -1,0 +1,38 @@
+{% extends 'menus/base.html'%}
+{% load static %}
+{% block title%}DAIRY{% endblock %}
+    {% block content %}
+        <body>
+            <style>
+                h1{
+                color:blue;
+                text-align: center;
+                 list-style-type: circle;}
+                h2{text-align: center; margin-top: 2px; color:blue;}
+                button{
+                    background-color: blue;
+                    border-radius: 10%;
+                    color:white;
+                }
+            </style>
+            <h2 class="text-center">CATEGORIES</h2>
+            {% for category in categories%}
+            <li>
+                <a href="{% url 'menus:category_detail' category.id %}">
+                 <h1>{{category.name}}</h1>
+                
+                 
+            </a>
+            </li>
+            <h2>{{product.name}}</h2>
+            <a href="{% url 'menus:product_list' category.id  %}">
+                <button type="submit" class="btn-primary text-center"> products</button></a>
+                   {% endfor %}
+        </body>
+        <br>
+        <a href="{% url 'menus:product_list'  %}">
+    ← Back to home
+</a>
+
+    
+{% endblock %}

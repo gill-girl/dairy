@@ -1,0 +1,61 @@
+{% extends 'menus/base.html' %}
+{% load static %}
+{% block content %}
+
+<title>All Products</title>
+
+<style>
+    h1 {
+        color: blue;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .product-link {
+        text-decoration: none;
+        color: inherit;
+    }
+    .product-link:hover {
+        text-decoration: none;
+        transform: scale(1.02);
+        transition: transform 0.3s;
+    }
+    .card-img-top {
+        height: 250px;
+        object-fit: cover;
+    }
+    </style>
+
+<h1>All Products</h1>
+
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-4 mb-4">
+        <a href="{% url 'menus:product_detail' product.id product.slug %}" class="product-link">
+            <div class="card h-100 shadow-sm text-center">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top w-100" />
+                {% else %}
+                    <p class="text-center mt-2">The image is not available</p>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p>{{ product.description }}</p>
+                    <div>{{ product.price }}</div>
+                    <button class="btn btn-primary mt-2">View Product</button>
+                </div>
+                
+
+            </div>
+        </a>
+    </div>
+    
+
+
+    {% endfor %}
+</div>
+<a href="{% url 'menus:category_list'  %}">
+    ← Back to Categories
+</a>
+
+
+{% endblock %}

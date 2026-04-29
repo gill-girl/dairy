@@ -1,0 +1,29 @@
+{% extends 'menus/base.html'%}
+{% load static %}
+{% block title %}Dairy{% endblock %}
+{% block content %}
+<h2>Create form</h2>
+<div class="shadow md p-4">
+ <h2  class="text-center" style="color: blue;" >Checkout</h2>
+ <form method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit " class="button">place order here</button>
+ </form>
+ <style>
+    form p {
+            margin-bottom: 1rem;
+        }
+
+        .button {
+            background-color: blue;
+            color: white;
+            padding: 6px 12px;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+
+ </style>   
+</div>
+
+{% endblock%}

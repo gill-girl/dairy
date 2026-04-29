@@ -1,0 +1,33 @@
+{% extends 'menus/base.html' %}
+
+{% block title %}Cart View{% endblock %}
+
+{% block content %}
+
+
+    {% for item in cart.items.all %}
+    <div class="cart-item" style="margin-bottom:20px; display:flex; align-items:center;">
+        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="h-100 object-fit-cover" style="width:100px; height:100px; object-fit:cover;"/>
+        <div class="flex-grow ml-4" style="margin-left:20px;">
+            <h3 class="font-semibold text-lg">{{ item.product.name }}</h3>
+            <p class="text-indigo-600">Price: {{ item.product.price }}</p>
+
+            <h4>Quantity: {{item.quantity}}</div>
+    </div>
+    {% endfor %}
+
+
+
+<style>
+.button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+</style>
+<a href="{% url 'orders:order_create'%}">order</a>
+
+{% endblock %}
