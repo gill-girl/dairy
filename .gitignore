@@ -1,0 +1,9 @@
+venv
+*.log
+*.pyc
+.env
+/static/
+__pycache__
+local_settings.py
+
+
