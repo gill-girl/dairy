@@ -29,7 +29,24 @@
             <h3 class="font-semibold text-lg">{{ item.product.name }}</h3>
 
             <p class="text-indigo-600">Price: {{ item.product.price }}</p>
-            <p class="text-gray-600">Quantity: {{ item.quantity }}</p>
+            <!--<p class="text-gray-600">Quantity: {{ item.quantity }}</p>-->
+<button onclick="decreaseQty()">-</button>
+<input type="text" id="qty" value="1" readonly>
+<button onclick="increaseQty()">+</button>
+
+<script>
+function increaseQty() {
+    let qty = document.getElementById("qty");
+    qty.value = parseInt(qty.value) + 1;
+}
+
+function decreaseQty() {
+    let qty = document.getElementById("qty");
+    if (parseInt(qty.value) > 1) {
+        qty.value = parseInt(qty.value) - 1;
+    }
+}
+</script>
 
             <form action="{% url 'cart:remove_item' item.id %}" method="post">
                 {% csrf_token %}
