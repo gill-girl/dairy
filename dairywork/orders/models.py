@@ -6,6 +6,7 @@ class Order(models.Model):
     full_name=models.CharField(max_length=250)
     address=models.CharField(max_length=250)
     email=models.EmailField()
+    phone=models.CharField(max_length=15)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
     paid=models.BooleanField(default=False)
